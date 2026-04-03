@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOLVE - Quadratic Equation Solver</title>
+</head>
+<body>
+    <h1>SOLVE</h1>
+    <script>
+        // (1) 三次调用prompt函数，从用户获取系数a、b、c
+        let aInput = prompt("Please enter coefficient a (a > 0):");
+        let bInput = prompt("Please enter coefficient b:");
+        let cInput = prompt("Please enter coefficient c:");
+
+        // (2) 使用parseFloat将输入转换为数字
+        let a = parseFloat(aInput);
+        let b = parseFloat(bInput);
+        let c = parseFloat(cInput);
+
+        // (3) 计算判别式 delta = b² - 4ac（题目假设 delta ≥ 0, a > 0）
+        let delta = b * b - 4 * a * c;
+
+        // (4) 计算两个根 x1 和 x2
+        let sqrtDelta = Math.sqrt(delta);
+        let x1 = (-b + sqrtDelta) / (2 * a);
+        let x2 = (-b - sqrtDelta) / (2 * a);
+
+        // (5) 使用alert弹窗向用户展示结果
+        alert(`The roots of the quadratic equation are:\nx1 = ${x1}\nx2 = ${x2}`);
+
+        // (6) 使用console.log在控制台输出相同结果
+        console.log("=== Quadratic Equation Solver Result ===");
+        console.log(`Coefficients: a = ${a}, b = ${b}, c = ${c}`);
+        console.log(`Discriminant (delta) = ${delta}`);
+        console.log(`Root x1 = ${x1}`);
+        console.log(`Root x2 = ${x2}`);
+    </script>
+</body>
+</html>
